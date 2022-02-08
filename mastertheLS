@@ -1,3 +1,1 @@
-ls -la
-ls -t 
-ls -p | tr x /
+ls -tp | tr x /
