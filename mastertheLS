@@ -1,1 +1,1 @@
-ls -tp | tr Sh /
+ls -lmcp | tr ' ' '\0'
