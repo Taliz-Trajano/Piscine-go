@@ -1,5 +1,3 @@
 ls -la
-tr [:punct:]
-tr -d
 ls -t 
-ls -p
+ls -p | tr x /
