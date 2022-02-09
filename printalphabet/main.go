@@ -10,4 +10,5 @@ func main() {
         fmt.Printf("%c", ch)
     }
     fmt.Println()
+	fmt.Printf("\n")
 }
