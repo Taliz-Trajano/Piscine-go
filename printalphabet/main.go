@@ -6,8 +6,9 @@ import (
 
 func main() {
 
-	for ch := 'a'; ch <= 'z'; ch++ {
-		z01.PrintRune("%c", ch)
+	for i := 97; i <= 122; i++ {
+		z01.PrintRune(rune(i))
+
 	}
 	z01.PrintRune('\n')
 }
