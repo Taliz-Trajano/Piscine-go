@@ -1,14 +1,13 @@
-package main
+package z01
 
 import (
-    "fmt"
+    "github.com/01-edu/z01"
 )
 
 func main() {
 
     for ch := 'a'; ch <= 'z'; ch++ {
-        fmt.Printf("%c", ch)
+        z01.PrintRune("%c", ch)
     }
-    fmt.Println()
-	fmt.Printf("\n")
+    z01.PrintRune('\n')
 }
