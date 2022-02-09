@@ -5,10 +5,8 @@ import (
 )
 
 func main() {
-
 	for i := 97; i <= 122; i++ {
 		z01.PrintRune(rune(i))
-
 	}
 	z01.PrintRune('\n')
 }
