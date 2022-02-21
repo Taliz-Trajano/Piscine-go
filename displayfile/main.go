@@ -13,15 +13,15 @@ func main() {
 		length = i + 1
 	}
 	if length > 2 {
-		fmt.Println("Too many arguments")
+		fmt.Print("Too many arguments")
 	} else if length == 0 {
-		fmt.Println("File name missing")
+		fmt.Print("File name missing")
 	} else if arguments[0] == "quest8.txt" {
 		content, err := ioutil.ReadFile(arguments[0])
 		if err != nil {
-			fmt.Println(err.Error())
+			fmt.Print(err.Error())
 			return
 		}
-		fmt.Println(string(content))
+		fmt.Print(string(content))
 	}
 }
