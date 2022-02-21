@@ -2,7 +2,7 @@ package piscine
 
 func Sqrt(nb int) int {
 	if nb <= 0 {
-		return 1
+		return 0
 	} else {
 		for i := 0; i < nb/2; i++ {
 			if i*i == nb {
@@ -10,5 +10,5 @@ func Sqrt(nb int) int {
 			}
 		}
 	}
-	return 0
+	return 1
 }
