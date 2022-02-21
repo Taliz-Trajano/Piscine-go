@@ -13,8 +13,7 @@ func main() {
 	for i := range arguments {
 		length = i + 1
 	}
-
-	if length > 1 {
+	if length > 2 {
 		fmt.Println("Too many arguments")
 	} else if length == 0 {
 		fmt.Println("File name missing")
