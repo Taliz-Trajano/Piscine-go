@@ -1,45 +1,46 @@
 package main
 
 import (
-	"errors"
 	"os"
-	"unicode/utf8"
+
+	"github.com/01-edu/z01"
 )
 
-func PrintRune(r rune) error {
-	l := utf8.RuneLen(r)
-	if l == -1 {
-		return errors.New("The rune is not a valid value to encode in UTF-8")
+func main() {
+	EvenMsg := "I have an even number of arguments"
+	OddMsg := "I have an odd number of arguments"
+
+	arguments := os.Args[1:]
+	lengthOfArg := 0
+	for i := range arguments {
+		lengthOfArg = i + 1
 	}
-	p := make([]byte, l)
-	utf8.EncodeRune(p, r)
-	_, err := os.Stdout.Write(p)
-	return err
+
+	if isEven(lengthOfArg) {
+		printStr(EvenMsg)
+	} else {
+		printStr(OddMsg)
+	}
 }
 
 func printStr(str string) {
 	arrayStr := []rune(str)
 
-	for i := 0; i < len(arrayStr); i++ {
-		PrintRune(arrayStr[i])
+	length := 0
+	for j := range arrayStr {
+		length = j + 1
 	}
-	PrintRune('\n')
+
+	for i := 0; i < length; i++ {
+		z01.PrintRune(arrayStr[i])
+	}
+	z01.PrintRune('\n')
 }
 
-func isEven() int {
-	lengthOfArg := os.Args[1:]
-	if len(lengthOfArg)%2 == 0 {
-		return 1
-	}
-	return 0
-}
-
-func main() {
-	EvenMsg := "I have an even number of arguments"
-	OddMsg := "I have an odd number of arguments"
-	if isEven() == 1 {
-		printStr(EvenMsg)
+func isEven(nbr int) bool {
+	if nbr%2 == 0 {
+		return true
 	} else {
-		printStr(OddMsg)
+		return false
 	}
 }
