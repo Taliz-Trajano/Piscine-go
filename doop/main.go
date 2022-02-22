@@ -2,9 +2,8 @@ package main
 
 import (
 	//"fmt"
+	//	"github.com/01-edu/z01"
 	"os"
-
-	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -30,8 +29,7 @@ func main() {
 	} else if arguments[1] == "%" {
 		sign = 4
 	} else {
-		z01.PrintRune(0)
-		z01.PrintRune('\n')
+		// fmt.Println(0)
 		return
 	}
 
@@ -39,8 +37,7 @@ func main() {
 		if (s >= '0' && s <= '9') || (i == 0 && s == '-') {
 			continue
 		} else {
-			z01.PrintRune('\n')
-			z01.PrintRune('0')
+			// fmt.Print("0\n")
 			return
 		}
 	}
@@ -49,8 +46,7 @@ func main() {
 		if (s >= '0' && s <= '9') || (i == 0 && s == '-') {
 			continue
 		} else {
-			z01.PrintRune('\n')
-			z01.PrintRune('0')
+			// fmt.Print("0\n")
 			return
 		}
 	}
@@ -59,9 +55,11 @@ func main() {
 	secondNbr := Atoi(arguments[2])
 
 	if secondNbr == 0 && arguments[1] == "/" {
+		// fmt.Println("No division by 0")
 		return
 	}
 	if secondNbr == 0 && arguments[1] == "%" {
+		// fmt.Println("No Modulo by 0")
 		return
 	}
 
@@ -69,7 +67,7 @@ func main() {
 	arrayOfFunctions := []func(int, int) int{plus, minus, times, div, mod}
 	result = apply(arrayOfFunctions[sign], firstNbr, secondNbr)
 
-	z01.PrintRune(rune(result))
+	// fmt.Println(result)
 }
 
 func plus(a, b int) int {
