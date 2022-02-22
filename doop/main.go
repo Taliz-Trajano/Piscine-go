@@ -1,9 +1,9 @@
 package main
 
 import (
-	//"fmt"
-	//	"github.com/01-edu/z01"
+	"fmt"
 	"os"
+	//	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -67,7 +67,7 @@ func main() {
 	arrayOfFunctions := []func(int, int) int{plus, minus, times, div, mod}
 	result = apply(arrayOfFunctions[sign], firstNbr, secondNbr)
 
-	// fmt.Println(result)
+	fmt.Println(result)
 }
 
 func plus(a, b int) int {
