@@ -2,8 +2,9 @@ package main
 
 import (
 	//"fmt"
-	"github.com/01-edu/z01"
 	"os"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
@@ -58,11 +59,9 @@ func main() {
 	secondNbr := Atoi(arguments[2])
 
 	if secondNbr == 0 && arguments[1] == "/" {
-		z01.PrintRune(rune("No division by 0"))
 		return
 	}
 	if secondNbr == 0 && arguments[1] == "%" {
-		z01.PrintRune(rune('No Modulo by 0'))
 		return
 	}
 
