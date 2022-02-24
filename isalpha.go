@@ -1,8 +1,13 @@
 package piscine
 
-import "regexp"
-
 func IsAlpha(str string) bool {
-	re := regexp.MustCompile("^[a-zA-Z0-9_]*$")
-	return re.MatchString(str)
+	if str == "" {
+		return false
+	}
+	for _, s := range str {
+		if !((s >= 48 && s <= 57) || (s >= 65 && s <= 90) || (s >= 97 && s <= 122)) {
+			return false
+		}
+	}
+	return true
 }
