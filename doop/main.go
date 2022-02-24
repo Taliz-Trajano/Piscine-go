@@ -118,7 +118,7 @@ func Deduct(a, b string) {
 		return
 	}
 	if !MinusOverflow(aa, bb) {
-		// PrintConsole("-0")
+		PrintConsole("-0")
 		return
 	}
 	PrintConsole(NbrToStr(aa - bb))
@@ -136,7 +136,7 @@ func Devide(a, b string) {
 	}
 	aa, aBool := Atoi(a)
 	if !aBool {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa / bb))
@@ -145,16 +145,16 @@ func Devide(a, b string) {
 func Multiply(a, b string) {
 	aa, aBool := Atoi(a)
 	if !aBool {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	bb, bBool := Atoi(b)
 	if !bBool {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	if !MultiplyOverflow(aa, bb, 0) {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa * bb))
@@ -163,7 +163,7 @@ func Multiply(a, b string) {
 func Mod(a, b string) {
 	bb, bBool := Atoi(b)
 	if !bBool {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	if bb == 0 {
@@ -172,7 +172,7 @@ func Mod(a, b string) {
 	}
 	aa, aBool := Atoi(a)
 	if !aBool {
-		// PrintConsole("0")
+		PrintConsole("0")
 		return
 	}
 	PrintConsole(NbrToStr(aa % bb))
@@ -203,7 +203,7 @@ func main() {
 		return
 	}
 	if !(IsNumeric(args[0]) && IsNumeric(args[2])) {
-		// PrintConsole("0")
+		PrintConsole("0")
 	}
 	funcsArr := []func(string, string){Plus, Deduct, Devide, Multiply, Mod}
 	operators := []string{"+", "-", "/", "*", "%"}
