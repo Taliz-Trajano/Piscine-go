@@ -1,11 +1,11 @@
 package piscine
 
 func Enigma(a ***int, b *int, c *******int, d ****int) {
-	ech := *******c
+	x := *******c
 	*******c = ***a
-	ech1 := ****d
-	****d = ech
-	ech = *b
-	*b = ech1
-	***a = ech
+	y := ****d
+	****d = x
+	z := *b
+	*b = y
+	***a = z
 }
