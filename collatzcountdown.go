@@ -1,22 +1,20 @@
 package piscine
 
-func CollatzCountRec(start int) int {
-	if start == 1 {
-		return 1
-	}
-	count := 1
-	if start%2 == 0 {
-		count = CollatzCountRec(start / 2)
-	} else {
-		count = CollatzCountRec((start * 3) + 1)
-	}
-	count++
-	return count
-}
-
 func CollatzCountdown(start int) int {
 	if start <= 0 {
 		return -1
 	}
-	return CollatzCountRec(start)
+
+	steps := 1
+
+	for start != 1 {
+		if start%2 == 0 {
+			start = start / 2
+		} else {
+			start = 3*start + 1
+		}
+		steps++
+	}
+
+	return steps
 }
