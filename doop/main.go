@@ -213,5 +213,5 @@ func main() {
 			return
 		}
 	}
-	// PrintConsole("0")
+	PrintConsole("0")
 }
