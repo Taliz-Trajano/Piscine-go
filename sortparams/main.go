@@ -1,42 +1,19 @@
 package main
 
 import (
+	"fmt"
 	"os"
-
-	"github.com/01-edu/z01"
+	"sort"
 )
 
 func main() {
-	arguments := os.Args
+	args := os.Args[1:]
 
-	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if i != 0 && (runes[j] >= '0' && runes[j] <= '9') {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
-			}
-		}
-	}
-	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if i != 0 && (runes[j] >= 'A' && runes[j] <= 'Z') {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
-			}
-		}
-	}
-	for i := range arguments {
-		runes := []rune(arguments[i])
-		j := 0
-		if i != 0 && (runes[j] >= 'a' && runes[j] <= 'z') {
-			for _, j := range arguments[i] {
-				z01.PrintRune(j)
-				z01.PrintRune('\n')
-			}
-		}
+	sort.Slice(args, func(i, j int) bool {
+		return args[i] < args[j]
+	})
+
+	for _, res := range args {
+		fmt.Println(res)
 	}
 }
