@@ -1,4 +1,4 @@
-package piscine
+package hackaton
 
 func ActiveBits(n int) uint {
 	if n < 2 {
