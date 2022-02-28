@@ -20,22 +20,22 @@ func IsNegative_node(node *NodeL) bool {
 	return false
 }
 
-func IsNumeric_node(node *NodeL) bool {
+func IsNotNumeric_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
-		return true
-	case string, rune:
 		return false
+	case string, rune:
+		return true
 	}
-	return false
+	return true
 }
 
-func ListForEachIf(l *List, f func(*NodeL), comp func(*NodeL) bool) {
-	it := l.Head
-	for it != nil {
-		if comp(it) {
-			f(it)
+func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
+	current := l.Head
+	for current != nil {
+		if cond(current) {
+			f(current)
 		}
-		it = it.Next
+		current = current.Next
 	}
 }
