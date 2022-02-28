@@ -1,4 +1,4 @@
-package piscine
+package main
 
 func IsPositive_node(node *NodeL) bool {
 	switch node.Data.(type) {
