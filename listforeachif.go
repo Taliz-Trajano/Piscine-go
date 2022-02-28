@@ -1,4 +1,14 @@
-package main
+package piscine
+
+// type NodeL struct {
+// 	Data interface{}
+// 	Next *NodeL
+// }
+
+// type List struct {
+// 	Head *NodeL
+// 	Tail *NodeL
+// }
 
 func IsPositive_node(node *NodeL) bool {
 	switch node.Data.(type) {
@@ -20,22 +30,22 @@ func IsNegative_node(node *NodeL) bool {
 	return false
 }
 
-func IsNumeric_node(node *NodeL) bool {
+func IsNotNumeric_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
-		return true
-	case string, rune:
 		return false
+	case string, rune:
+		return true
 	}
-	return false
+	return true
 }
 
-func ListForEachIf(l *List, f func(*NodeL), comp func(*NodeL) bool) {
-	it := l.Head
-	for it != nil {
-		if comp(it) {
-			f(it)
+func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
+	node := l.Head
+	for node != nil {
+		if cond(node) {
+			f(node)
 		}
-		it = it.Next
+		node = node.Next
 	}
 }
