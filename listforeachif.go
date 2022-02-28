@@ -1,5 +1,15 @@
 package piscine
 
+func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
+	n := l.Head
+	for n != nil {
+		if cond(n) {
+			f(n)
+		}
+		n = n.Next
+	}
+}
+
 func IsPositive_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
@@ -20,22 +30,12 @@ func IsNegative_node(node *NodeL) bool {
 	return false
 }
 
-func IsNumeric_node(node *NodeL) bool {
+func IsNotNumeric_node(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
-		return true
-	case string, rune:
 		return false
+	case string, rune:
+		return true
 	}
-	return false
-}
-
-func ListForEachIf(l *List, f func(*NodeL), comp func(*NodeL) bool) {
-	it := l.Head
-	for it != nil {
-		if comp(it) {
-			f(it)
-		}
-		it = it.Next
-	}
+	return true
 }
