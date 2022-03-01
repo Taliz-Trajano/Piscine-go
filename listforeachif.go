@@ -10,7 +10,7 @@ func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
 	}
 }
 
-func IsPositive_node(node *NodeL) bool {
+func IsPositiveNode(node *NodeL) bool {
 	switch node.Data.(type) {
 	case int, float32, float64, byte:
 		return node.Data.(int) > 0
