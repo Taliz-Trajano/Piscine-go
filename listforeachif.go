@@ -1,41 +1,24 @@
 package piscine
 
-func IsPositive_node(node *NodeL) bool {
-	switch node.Data.(type) {
-	case int, float32, float64, byte:
-		return node.Data.(int) > 0
-	case string, rune:
-		return false
-	}
-	return false
-}
+// removes all elements that are equal to the data_ref
+func ListRemoveIf(l *List, data_ref interface{}) {
+	temp := l.Head
+	prev := l.Head
 
-func IsNegative_node(node *NodeL) bool {
-	switch node.Data.(type) {
-	case int, float32, float64, byte:
-		return node.Data.(int) > 0
-	case string, rune:
-		return false
+	for temp != nil && temp.Data == data_ref {
+		l.Head = temp.Next
+		temp = l.Head
 	}
-	return false
-}
-
-func IsNotNumeric_node(node *NodeL) bool {
-	switch node.Data.(type) {
-	case int, float32, float64, byte:
-		return false
-	case string, rune:
-		return true
-	}
-	return true
-}
-
-func ListForEachIf(l *List, f func(*NodeL), cond func(*NodeL) bool) {
-	current := l.Head
-	for current != nil {
-		if cond(current) {
-			f(current)
+	for temp != nil {
+		for temp != nil && temp.Data != data_ref {
+			prev = temp
+			temp = temp.Next
 		}
-		current = current.Next
+
+		if temp == nil {
+			return
+		}
+		prev.Next = temp.Next
+		temp = prev.Next
 	}
 }
